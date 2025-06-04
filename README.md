@@ -38,6 +38,7 @@ Responsividade: Adaptado para dispositivos móveis e desktop.
 
 # 📚 Conteúdos Abordados
 ✅ Renda Fixa
+
 Conceitos básicos.
 
 Principais produtos: Tesouro Direto, CDB, LCI/LCA, entre outros.
@@ -45,16 +46,19 @@ Principais produtos: Tesouro Direto, CDB, LCI/LCA, entre outros.
 Riscos e garantias.
 
 ✅ Renda Variável
+
 Fundamentos do mercado de ações.
 
 Volatilidade e perfil de investidor.
 
 ✅ Comparação
+
 Análise gráfica e textual das principais diferenças.
 
 Quando e por que escolher cada tipo.
 
 ✅ Como Investir para Alcançar Metas
+
 Definição de objetivos financeiros.
 
 Estratégias de diversificação.
@@ -62,6 +66,7 @@ Estratégias de diversificação.
 Controle de risco e tempo de investimento.
 
 ✅ Educação Financeira
+
 Orçamento pessoal.
 
 Reserva de emergência.
