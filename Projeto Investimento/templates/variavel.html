@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao Mundo dos Investimentos</title>
+  <link rel="stylesheet" href="/static/styles/estilo3.css"> <!-- Adicione o caminho correto para o CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Biblioteca Chart.js -->
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <nav class="navegacao">
+      <ul>
+        <li><a href="/">Página Inicial</a></li>
+        <li><a href="/index">Renda fixa</a></li>
+        <li><a href="/variavel">Renda variável</a></li>
+        <li><a href="/comparacao">Comparação</a></li>
+        <li><a href="/educacao">Educação financeira</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="titulo">
+    <h1>Conheça sobre <span>renda variável</span></h1>
+  </div>
+  <hr class="linha1">
+
+  <div class="container">
+    <h1><span class="highlight">Quem quer turbinar o patrimônio não consegue escapar dela:</span> Renda variável</h1>
+    <hr>
+    <h2>O que é <span class="highlight">renda variável</span> e como funciona?</h2>
+    <p>
+        Com esse tipo de investimento, que envolve alguns riscos de mercado específicos, é possível obter um retorno 
+        potencialmente maior que o da renda fixa.Em geral, investimentos de renda variável são aqueles cujo retorno é 
+        imprevisível no momento do investimento. O valor varia conforme as condições do mercado – e, consequentemente,
+        a remuneração que as aplicações oferecem segue esse mesmo princípio. Na renda variável, não é possível ter 
+        certeza. Quem compra a ação de uma empresa sabe que embolsará a valorização do papel no decorrer 
+        do tempo – mas de quanto será essa valorização? Impossível saber de antemão. Não dá para garantir 
+        nem que haverá ganhos, porque os papéis podem desvalorizar no período.
+    </p>
+  </div>
+  <div class="investment-options">
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/abc_banco-removebg-preview.png">
+      </div>
+      <div class="details">
+        <p class="title">ABC Prefixado</p>
+        <p class="subtitle">Por ABC Brasil</p>
+      </div>
+      <div class="percentage">
+        <p>12,41%</p>
+      </div>
+    </div>
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/banco_master.png" width="20px">
+      </div>
+      <div class="details">
+        <p class="title">Banco Master</p>
+        <p class="subtitle">Por Órama</p>
+      </div>
+      <div class="percentage">
+        <p>115%</p>
+      </div>
+    </div>
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/banco-original.png">
+      </div>
+      <div class="details">
+        <p class="title">Original 95%</p>
+        <p class="subtitle">Por XP Investimentos</p>
+      </div>
+      <div class="percentage">
+        <p>95%</p>
+      </div>
+    </div>
+
+    <div>
+      <hr class="linha2">
+      <h2 class="renda-variavel">Simulação de renda variavel</h2>
+    </div>
+   
+  <!-- Adicionando o Gráfico -->
+  <div class="grafico-container">
+    <canvas id="graficoRendaVariavel"></canvas>
+  </div>
+
+  <script>
+    // Gerando dados simulados para o gráfico
+    const dias = 252; // Aproximadamente um ano de pregão
+    const precoInicial = 100;
+    const retornoMedioDiario = 0.0005; // 0,05% ao dia
+    const volatilidadeDiaria = 0.02; // 2% ao dia
+
+    // Simulação de preços
+    const precos = [precoInicial];
+    for (let i = 1; i <= dias; i++) {
+      const retornoDiario = Math.random() * volatilidadeDiaria * 2 - volatilidadeDiaria + retornoMedioDiario;
+      precos.push(precos[i - 1] * (1 + retornoDiario));
+    }
+
+    // Configurando o gráfico
+    const ctx = document.getElementById('graficoRendaVariavel').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array.from({ length: dias }, (_, i) => i + 1),
+        datasets: [{
+          label: 'Preço do Ativo (Simulação)',
+          data: precos,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.4)', // Cor de fundo da linha (se desejado)
+          borderWidth: 2,
+          tension: 0.3, // Suaviza a curva
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              color: 'white' // Cor da legenda para branco
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Dias',
+              color: 'white', // Cor do título do eixo X para branco
+            },
+            ticks: {
+              color: 'white', // Cor dos números do eixo X para branco
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Preço do Ativo',
+              color: 'white', // Cor do título do eixo Y para branco
+            },
+            ticks: {
+              color: 'white', // Cor dos números do eixo Y para branco
+            },
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  </script>
+  <div class="container2">
+    <p>Acima, apresentamos um gráfico que simula o comportamento de uma renda variável. 
+      Dependendo do ativo escolhido para investimento, seu preço de mercado pode sofrer 
+      alterações ao longo dos dias. Ao atualizar a página, a simulação será alterada, 
+      permitindo que você observe as flutuações de preço. Essas variações estão relacionadas 
+      ao comportamento do ativo selecionado. Nosso objetivo é que você compreenda as possíveis 
+      oscilações de preço, destacando que o valor do investimento pode tanto aumentar quanto 
+      diminuir, afetando diretamente a sua renda.</p>
+  </div>
+</body>
+</html>

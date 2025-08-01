@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: Poppins;
+    color: white;
+    background-color: #4A4141; /* Cor de fundo padrão */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/assets/variavel.png'); /*Imagem de fundo */
+  }
+  
+ /* Cabeçalho */
+header {
+  background-color: rgba(27, 26, 26, 0.315);
+  padding: 10px 20px;
+}
+
+.navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navegacao li {
+  margin-left: 20px;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navegacao a:hover {
+  color: #71a7af;
+}
+
+.linha1 {
+  border: none;
+  border-top: 2px solid #71a7af;
+  width: 860px;
+  margin: 0 auto; /* Centraliza e remove margens */
+  position: relative; /* Permite ajustes finos */
+  top: -70px; /* Move a linha para cima, se necessário */
+  right: 210px;
+}
+
+.titulo{
+  margin: 80px;
+  text-align: left;
+  margin-left: 120px;
+  
+}
+
+  .titulo h1{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+
+
+  }
+
+  .titulo span{
+    color: #71a7af;
+  }
+
+  .linha2 {
+    border: none;
+    border-top: 2px solid #71a7af;
+    width: 130px;
+    margin-left: -170px;
+    margin-top: 250px;
+  }
+
+  .renda-variavel {
+    font-family: Poppins;
+    font-size: 40px;
+    color: #71a7af;
+    margin-top: -47px;
+    margin-left: -20px;
+    white-space: nowrap;  /* Impede a quebra de linha */
+  }
+  
+  
+  .container {
+    border-radius: 10px;
+    border: 4px solid #71a7af;
+    background-color: rgba(27, 26, 26, 0.541);
+    padding: 30px;
+    margin-left: 650px;
+    width: 700px;
+    text-align: left;
+  }
+
+  .container2 {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 20px;
+    margin-left: -50px;
+    width: 1250px;
+    height: 150px;
+    text-align: left;
+  }
+   
+  h1 {
+    color: #71a7af;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+   
+  h1 .highlight {
+    color:#ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+   
+  hr {
+    border: none;
+    border-top: 1px solid #777;
+    margin: 15px 0;
+  }
+   
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+   
+  h2 .highlight {
+    color: #71a7af;
+  }
+   
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 10px;
+  }
+  .content p{
+    max-width: 100%;
+    overflow: hidden; /* Esconde o que ultrapassa */
+    text-overflow: ellipsis; /* Adiciona "..." se necessário */
+    word-wrap: break-word; /* Quebra palavras longas */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding dentro do tamanho */
+    text-align: left;
+
+  }.investment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin-left: 170px;
+    margin-top: -370px;
+  }
+  
+  .investment-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(31, 31, 31, 0.6);
+    border-radius: 10px;
+    padding: 10px 15px;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  
+  .details {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .details .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .details .subtitle {
+    font-size: 12px;
+    color: #ccc;
+    margin: 5px 0 0 0;
+  }
+  
+  .percentage p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .grafico-container {
+    color: #ffffff;
+    width: 1300px;
+    margin-top: 80px; /* Ajuste a margem superior para aproximar o gráfico */
+    margin-left: -60px;
+  }
+  
+  

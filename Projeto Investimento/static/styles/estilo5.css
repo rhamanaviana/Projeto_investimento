@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: Poppins;
+  color: white;
+  background-color: #0B1121; /* Cor de fundo padrão */
+  background-image: url('/static/assets/fundo-variavel.png'); /* Imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Cabeçalho */
+header {
+  background-color: rgba(27, 26, 26, 0.315);
+  padding: 10px 20px;
+}
+
+.navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navegacao li {
+  margin-left: 20px;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navegacao a:hover {
+  color: #71a7af;
+}
+
+.titulo_tudo{
+  font-size: 60px;
+  margin-left: 120px;
+  margin-top: 40px;
+}
+
+
+.titulo {
+  color: #71a7af;
+}
+
+main p {
+  font-size: 1.0rem;
+  color: #ffffff;
+  margin-left: 120px;
+  margin-top: 20px;
+}
+
+.educa{
+  color: #71a7af;
+  margin-left: 140px;
+  margin-top: 60px;
+}
+
+.linha2 {
+  border: none;
+  border-top: 2px solid #71a7af;
+  width: 100px;
+  margin-top: -22px;
+}
+
+.intro {
+  text-align: center;
+  margin: 30px 10%;
+}
+
+.linha1 {
+  border: none;
+  border-top: 2px solid #71a7af;
+  width: 1130px;
+  margin-top: 5px;
+  margin-left: 120px;
+
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 70px;
+}
+
+.cursos {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 10%;
+}
+
+.pessoal {
+  background-color: rgba(215, 252, 252, 0.8);
+  padding: 25px;
+  width: 30%;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  border: 2px;
+  text-align: left;
+}
+
+.pessoal video{
+  border-radius: 8px;
+}
+
+.pessoal p{
+  padding-top: 25px;
+}
+
+.empresarial{
+  background-color: rgba(215, 252, 252, 0.8);
+  padding: 25px;
+  width: 30%;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  border: 2px;
+  text-align: left;
+}
+
+.empresarial video{
+  border-radius: 8px;
+}
+
+.empresarial p{
+  padding-top: 25px;
+}
+
+.familiar{
+  background-color: rgba(215, 252, 252, 0.8);
+  padding: 25px;
+  width: 30%;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  border: 2px;
+  text-align: left;
+}
+
+.familiar video{
+  border-radius: 8px;
+}
+
+.familiar p{
+  padding-top: 25px;
+}
+
+.cursos h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.cursos .titulo_curso {
+  color: #71a7af;
+}
+
+.cursos p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+img {
+  margin-left: 1000px;
+  margin-bottom: -285px;
+  width: 230px;
+  height: auto;
+  margin-top: 50px;
+}

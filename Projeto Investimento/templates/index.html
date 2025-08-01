@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao Mundo dos Investimentos</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/styles/estilo2.css"> <!-- Adicione o caminho correto para o CSS -->
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <nav class="navegacao">
+      <ul>
+        <li><a href="/">Página Inicial</a></li>
+        <li><a href="/index">Renda fixa</a></li>
+        <li><a href="/variavel">Renda variável</a></li>
+        <li><a href="/comparacao">Comparação</a></li>
+        <li><a href="/educacao">Educação financeira</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h1 class="titulo"><span class="highlight">Rentabilidade</span> garantida? Risco zero de perda?</h1>
+  </div>
+  <hr class="linha1">
+  </hr>
+
+  <div class="content">
+    <h2>O que é <span class="highlight">renda fixa</span> e como funciona?</h2>
+    <hr>
+    <p>
+      Você talvez esteja se perguntando o que é renda fixa, afinal. A resposta está em um conceito fácil de entender:
+      nos investimentos em renda fixa, o cálculo da remuneração é previamente definido e conhecido desde o momento da
+      aplicação.
+      Em geral, quem compra um título de renda fixa "empresta" dinheiro para alguém. Em troca, espera receber o valor
+      aplicado de volta no futuro acrescido de juros,
+      que são a remuneração pelo tempo pelo qual o recurso ficou emprestado. As condições dessa transação – como prazos,
+      taxas, índices de referência e detalhes
+      quanto à negociação – são acertadas desde o início.
+      O que é importante pontuar é que renda fixa não é sinônimo de retorno garantido. Isso porque esses investimentos
+      também estão sujeitos a riscos,
+      tanto de crédito quanto de mercado. Inclusive, em algumas situações, o valor de um papel pode variar tanto quanto
+      uma ação.
+    </p>
+  </div>
+
+  <div class="investment-options">
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/abc_banco-removebg-preview.png">
+      </div>
+      <div class="details">
+        <p class="title">Tesouro Prefixado</p>
+        <p class="subtitle">rentabilidade anual</p>
+      </div>
+      <div class="percentage">
+        <p>13,92%</p>
+      </div>
+    </div>
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/banco_master.png" width="20px">
+      </div>
+      <div class="details">
+        <p class="title">Tesouro IPCA+</p>
+        <p class="subtitle">rentabilidade anual</p>
+      </div>
+      <div class="percentage">
+        <p>IPCA + 7,08%</p>
+      </div>
+    </div>
+    <div class="investment-card">
+      <div class="logo">
+        <img src="/static/assets/banco-original.png">
+      </div>
+      <div class="details">
+        <p class="title">Tesouro Selic</p>
+        <p class="subtitle">rentabilidade anual</p>
+      </div>
+      <div class="percentage">
+        <p>SELIC + 0,0365%</p>
+      </div>
+    </div>
+
+    <!-- Simulador de Investimento -->
+    <div>
+      <hr class="linha2">
+      <h2 class="renda-fixa">Simulação de renda fixa</h2>
+    </div>
+    <div class="simulador">
+      <h2>Simule seu <span>Investimento</span></h2>
+      <p>Compare e confira as vantagens de investir seu dinheiro no Tesouro Direto.</p>
+  
+      <div>
+        <label for="valor">Eu tenho R$:</label>
+        <input type="range" id="valor" class="slider" value="20000" min="1000" max="1000000" step="1000">
+        <span id="valorDisplay">20.000</span>
+      </div>
+  
+      <div>
+        <label for="anos">Para aplicar durante:</label>
+        <input type="range" id="anos" class="slider" value="20" min="1" max="50" step="1">
+        <span id="anosDisplay">20 anos</span>
+      </div>
+  
+      <button class="btn-simular" onclick="simularInvestimento()">Simular</button>
+  
+      <div class="resultado">
+        <div class="barra">
+          <div class="valor" id="poupancaValor">R$ 71.223,21</div>
+          <span class="renda">Poupança</span>
+        </div>
+        <div class="barra">
+          <div class="valor" id="tesouroValor">R$ 123.977,19</div>
+          <span class="renda">Tesouro IPCA+ 2045</span>
+        </div>
+      </div>
+  
+      <p class="lembrete"><strong>Lembre-se:</strong> este é apenas um exemplo de simulação e sistema operacional
+        os resultados podem variar dependendo das condições do mercado e de outros fatores.</p>
+    </div>
+  
+    <!-- Gráfico -->
+    <div class="grafico">
+      <canvas id="graficoInvestimento"></canvas>
+    </div>
+  
+    <script>
+      const ctx = document.getElementById('graficoInvestimento').getContext('2d');
+      let chart;
+  
+      // Atualiza os valores exibidos dos sliders
+      document.getElementById('valor').addEventListener('input', function () {
+      document.getElementById('valorDisplay').textContent = formatarMoeda(this.value);
+      });
+  
+      document.getElementById('anos').addEventListener('input', function () {
+        document.getElementById('anosDisplay').textContent = this.value + ' anos';
+      });
+  
+      function simularInvestimento() {
+        const valor = parseFloat(document.getElementById('valor').value);
+        const anos = parseInt(document.getElementById('anos').value);
+  
+        // Calcula os resultados
+        const poupanca = calcularPoupancaAnual(valor, anos);
+        const tesouro = calcularTesouroAnual(valor, anos);
+  
+        document.getElementById('poupancaValor').textContent = formatarMoeda(poupanca[anos - 1]);
+        document.getElementById('tesouroValor').textContent = formatarMoeda(tesouro[anos - 1]);
+  
+        // Atualiza o gráfico
+        atualizarGrafico(anos, poupanca, tesouro);
+      }
+  
+      function calcularPoupancaAnual(valor, anos) {
+        const resultados = [];
+        for (let i = 1; i <= anos; i++) {
+          resultados.push((valor * Math.pow(1.05, i)).toFixed(2));
+        }
+        return resultados;
+      }
+  
+      function calcularTesouroAnual(valor, anos) {
+        const resultados = [];
+        for (let i = 1; i <= anos; i++) {
+          resultados.push((valor * Math.pow(1.08, i)).toFixed(2));
+        }
+        return resultados;
+      }
+  
+      function formatarMoeda(valor) {
+        return 'R$ ' + parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+      }
+  
+      function atualizarGrafico(anos, poupanca, tesouro) {
+        const labels = Array.from({ length: anos }, (_, i) => (i + 1) + ' anos');
+        const dadosPoupanca = poupanca.map(v => parseFloat(v));
+        const dadosTesouro = tesouro.map(v => parseFloat(v));
+  
+        if (chart) chart.destroy();
+  
+        chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: 'Poupança',
+                data: dadosPoupanca,
+                borderColor: 'blue',
+                tension: 0.4,
+              },
+              {
+                label: 'Tesouro IPCA+',
+                data: dadosTesouro,
+                borderColor: 'green',
+                tension: 0.4,
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+                  color: 'white',  // Muda a cor dos nomes da legenda para branco
+                      }
+                    },
+            scales: {
+              x: {
+                ticks: {
+                  color: 'white',  // Muda a cor dos números no eixo X para branco
+                },
+              },
+              y: {
+                ticks: {
+                  color: 'white',  // Muda a cor dos números no eixo Y para branco
+                },
+              },
+            },
+          }
+        });
+      }
+  
+      // Inicializa a simulação
+      simularInvestimento();
+    </script>
+</body>
+
+</html>
